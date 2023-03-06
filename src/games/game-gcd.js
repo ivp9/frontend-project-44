@@ -2,8 +2,8 @@ import readlineSync from 'readline-sync';
 import playGame from '../index.js';
 
 const initGameGCD = () => {
-  const rule = 'Find the greatest common divisor of given numbers.';
-  const getAnswerAndCorrectAnswer = () => {
+  const description = 'Find the greatest common divisor of given numbers.';
+  const getRound = () => {
     const number1 = Math.round(Math.random() * 100);
     const number2 = Math.round(Math.random() * 100);
     console.log(`Question: ${number1} ${number2}`);
@@ -33,6 +33,6 @@ const initGameGCD = () => {
     const answer = Number(readlineSync.question('Your answer: '));
     return [answer, correctAnswer];
   };
-  playGame(rule, getAnswerAndCorrectAnswer);
+  playGame(description, getRound);
 };
 export default initGameGCD;

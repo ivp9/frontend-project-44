@@ -2,8 +2,8 @@ import readlineSync from 'readline-sync';
 import playGame from '../index.js';
 
 const initGameEven = () => {
-  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const getAnswerAndCorrectAnswer = () => {
+  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const getRound = () => {
     const number = Math.round(Math.random() * 100);
     console.log(`Question: ${number}`);
     let correctAnswer;
@@ -15,6 +15,6 @@ const initGameEven = () => {
     const answer = readlineSync.question('Your answer: ');
     return [answer, correctAnswer];
   };
-  playGame(rule, getAnswerAndCorrectAnswer);
+  playGame(description, getRound);
 };
 export default initGameEven;

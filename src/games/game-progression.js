@@ -3,8 +3,8 @@ import readlineSync from 'readline-sync';
 import playGame from '../index.js';
 
 const initGameProgression = () => {
-  const rule = 'What number is missing in the progression?';
-  const getAnswerAndCorrectAnswer = () => {
+  const description = 'What number is missing in the progression?';
+  const getRound = () => {
     const countOfNumbers = 10;
     let firstNumber = Math.round(Math.random() * 100);
     const arrayOfNumbers = [firstNumber];
@@ -20,6 +20,6 @@ const initGameProgression = () => {
     const answer = Number(readlineSync.question('Your answer: '));
     return [answer, correctAnswer];
   };
-  playGame(rule, getAnswerAndCorrectAnswer);
+  playGame(description, getRound);
 };
 export default initGameProgression;

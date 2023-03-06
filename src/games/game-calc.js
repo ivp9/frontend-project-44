@@ -2,8 +2,8 @@ import readlineSync from 'readline-sync';
 import playGame from '../index.js';
 
 const initGameCalc = () => {
-  const rule = 'What is the result of the expression?';
-  const getAnswerAndCorrectAnswer = () => {
+  const description = 'What is the result of the expression?';
+  const getRound = () => {
     const operators = ['+', '-', '*'];
     const indexOfOperators = Math.round(Math.random() * 2);
     const number1 = Math.round(Math.random() * 100);
@@ -24,6 +24,6 @@ const initGameCalc = () => {
     const answer = Number(readlineSync.question('Your answer: '));
     return [answer, correctAnswer];
   };
-  playGame(rule, getAnswerAndCorrectAnswer);
+  playGame(description, getRound);
 };
 export default initGameCalc;

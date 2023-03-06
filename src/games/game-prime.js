@@ -3,8 +3,8 @@ import readlineSync from 'readline-sync';
 import playGame from '../index.js';
 
 const initGamePrime = () => {
-  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-  const getAnswerAndCorrectAnswer = () => {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+  const getRound = () => {
     const number = Math.round(Math.random() * 100);
     console.log(`Question: ${number}`);
     const arrayOfNumberDivisors = [];
@@ -25,6 +25,6 @@ const initGamePrime = () => {
     const answer = (readlineSync.question('Your answer: '));
     return [answer, correctAnswer];
   };
-  playGame(rule, getAnswerAndCorrectAnswer);
+  playGame(description, getRound);
 };
 export default initGamePrime;
