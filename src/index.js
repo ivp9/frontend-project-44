@@ -9,13 +9,11 @@ const playGame = (description, getRound) => {
     const [answer, correctAnswer] = getRound();
     if (answer === correctAnswer) {
       console.log('Correct!');
-      if (countOfRounds === 3) {
-        console.log(`Congratulations, ${name}!`);
-      }
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
 export default playGame;
