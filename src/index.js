@@ -6,11 +6,11 @@ const playGame = (description, getRound) => {
   console.log(`Hello, ${name}!`);
   for (let countOfRounds = 1; countOfRounds < 4; countOfRounds += 1) {
     console.log(description);
-    const [answer, correctAnswer] = getRound();
-    if (answer === correctAnswer) {
+    const [question, correctAnswer] = getRound();
+    if (question === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+      console.log(`'${question}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       return;
     }
   }
