@@ -1,15 +1,14 @@
-import readlineSync from 'readline-sync';
 import playGame from '../index.js';
-import { generateRandomNumber, isEven } from '../utils.js';
+import generateRandomNumber from '../utils.js';
+
+const isEven = (number) => number % 2 === 0;
 
 const initGameEven = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   const getRound = () => {
     const number = generateRandomNumber(100);
-    console.log(`Question: ${number}`);
-    let correctAnswer = isEven(number);
-    correctAnswer = (correctAnswer === 'true' ? 'yes' : 'no');
-    const question = readlineSync.question('Your answer: ');
+    const question = number;
+    const correctAnswer = isEven(number) ? 'yes' : 'no';
     return [question, correctAnswer];
   };
   playGame(description, getRound);
